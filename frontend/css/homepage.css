@@ -8,7 +8,7 @@ html{
 }
 /* ── Stars ── */
 #stars-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,6 +39,24 @@ html{
 .site-header,
 main,
 .site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Hero ── */
+.hero {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-heading,
+.hero-body {
     position: relative;
     z-index: 1;
 }
@@ -121,6 +139,7 @@ a, a:link, a:visited, a:hover, a:active {
     background-color: #81d4fa;
 }
 
+
 /* Push page content below the fixed header */
 main {
     padding-top: 64px;
@@ -134,19 +153,98 @@ main {
 }
 .hero-body{
     text-align:center;
-    margin-top: 4rem;
-    margin-bottom: auto;
     max-width:850px;
-    margin: 0 auto;
+    margin: 1.75rem auto 0;
     font-size: 1rem;
-    margin-top:3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Hero CTAs ── */
+.hero-ctas {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background-color 0.25s, border-color 0.25s, transform 0.2s;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.hero-btn-primary {
+    background-color: rgba(8, 18, 48, 0.85);
+    border: 2px solid rgba(79, 195, 247, 0.45);
+    color: #ffffff !important;
+}
+
+.hero-btn-primary:hover {
+    background-color: rgba(79, 195, 247, 0.12);
+    border-color: #4fc3f7;
+    transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff !important;
+}
+
+.hero-btn-outline:hover {
+    border-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+/* ── Hero trust badges ── */
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem 1.1rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    color: rgba(245, 245, 245, 0.6);
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-badge svg {
+    color: #4fc3f7;
+    flex-shrink: 0;
+}
+
+.badge-sep {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    line-height: 1;
 }
 
 #protect-your-home{
     font-size: 3rem;
     color: white;
     text-align: center;
-    margin-top: 5rem;
 }
 
 #with-cutting-edge{
@@ -165,7 +263,13 @@ main {
     margin-top: 7rem;
     color:rgb(95, 88, 88);
     font-weight: 50px;
-    
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.section-title.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-title2{
@@ -173,8 +277,16 @@ main {
     font-size:2rem;
     text-align: center;
     margin: 0 auto;
-
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
 }
+.section-title2.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
 .solutions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -193,7 +305,13 @@ main {
     text-decoration: none;
     height: 500px;
     color: inherit;
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s, border-color 0.3s;
+}
+.solution-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .solution-card:hover {
@@ -260,7 +378,7 @@ main {
     font-size: 0.85rem;
     transition: color 0.2s;
 }
-#footer-col-headings{s
+#footer-col-headings{
     margin-bottom: 2rem;
     font-size: 1.3rem;
     color: #ffffff;
