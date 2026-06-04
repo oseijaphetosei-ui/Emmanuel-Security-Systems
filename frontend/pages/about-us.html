@@ -15,8 +15,8 @@
                 <h1 class="site-title">Emmanuel Security Systems</h1>
                 <nav class="main-nav" aria-label="Main navigation">
                     <ul>
-                        <li><a href="homepage.html" class="active">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="about-us.html" class="active">About Us</a></li>
                         <li><a href="service-details.html">Solutions</a></li>
                         <li><a href="client-portal.html">Client Portal</a></li>
                         <li><a href="contact-us.html">Contact Us</a></li>
@@ -72,14 +72,14 @@
                         <a href="contact-us.html">CALL TO SCHEDULE A CONSULTATION</a>
                     </div>
                     <div class="division-form">
-                        <h1>Get a Quote</h1>
-                        <form action="Submit" class="form">
-                            <div>
-                                <label for="username">Your Name:</label>
-                                <input type="text" id="username" name="username" required>
+                        <h2 class="form-heading">Get a Quote</h2>
+                        <form action="#" class="quote-form">
+                            <div class="form-group">
+                                <label for="username">Full Name</label>
+                                <input type="text" id="username" name="username" placeholder="Emmanuel Dawson" required>
                             </div>
-                            <div>
-                                <label for="phone_number">Contact:</label>
+                            <div class="form-group">
+                                <label for="phone_number">Phone / WhatsApp</label>
                                 <div class="phone-input">
                                     <select name="country_code" id="country_code">
                                         <option value="+233">🇬🇭 +233</option>
@@ -98,44 +98,40 @@
                                     <input type="tel" id="phone_number" name="phone_number" placeholder="00 000 0000" inputmode="numeric" pattern="[0-9]*" oninput="this.value=this.value.replace(/\D/g,'')" required>
                                 </div>
                             </div>
-                            <div class="select_services">
-                                <label>Select Services:</label>
-                                <div class="checkbox-group">
-                                    <label for="item1"> Electrical Fence</label>
+                            <div class="form-group">
+                                <label>Select Services</label>
+                                <div class="checkbox-list">
+                                    <div class="checkbox-group">
                                         <input type="checkbox" id="item1" value="electrical_fence">
-                                </div>
-                                <div class="checkbox-group">
-                                    <label for="item2">Razor Fence</label>
-                                        <input type="checkbox" id="item2" value="razor_fence"> 
-                                </div>
-                                <div class="checkbox-group">
-                                    <label for="item3">CCTV Surveillance Systems</label>
-                                        <input type="checkbox" id="item3" value="camera"> 
-                                </div>
-                                <div class="checkbox-group">
-                                    <label for="item4">Gate Motor</label>
-                                        <input type="checkbox" id="item4" value="gate_motor"> 
-                                </div>
-                                <div class="checkbox-group">
-                                    <label for="item5"> House Wiring & Lighting</label>
+                                        <label for="item1">Electrical Fence</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="item2" value="razor_fence">
+                                        <label for="item2">Razor Fence</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="item3" value="camera">
+                                        <label for="item3">CCTV Surveillance Systems</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="item4" value="gate_motor">
+                                        <label for="item4">Gate Motor</label>
+                                    </div>
+                                    <div class="checkbox-group">
                                         <input type="checkbox" id="item5" value="house_wiring">
+                                        <label for="item5">House Wiring &amp; Lighting</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="item6" value="doorbell">
+                                        <label for="item6">Doorbell Camera</label>
+                                    </div>
                                 </div>
-                                <div class="checkbox-group">
-                                    <label for="item6">Doorbell Camera</label>
-                                        <input type="checkbox" id="item6" value="doorbell"> 
-                                </div>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                
                             </div>
-                            <div>
+                            <div class="form-group">
                                 <label for="tell_us">How can we help?</label>
-                                <textarea id="tell_us" name="tell_us" rows="5" required></textarea>
+                                <textarea id="tell_us" name="tell_us" rows="4" placeholder="Tell us about your property and what you need..."></textarea>
                             </div>
+                            <button type="submit" class="form-submit">Request a Quote</button>
                         </form>
                     </div>
                 </div>
