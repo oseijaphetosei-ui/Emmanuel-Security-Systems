@@ -52,7 +52,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <input type="text" id="name" name="name" placeholder="Emmanuel Dawson" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
@@ -238,5 +238,21 @@
     </footer>
 
     <script src="../js/nav.js"></script>
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name    = document.getElementById('name').value;
+            const email   = document.getElementById('email').value;
+            const phone   = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const text = `New enquiry – Emmanuel Security Systems\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service || 'Not specified'}\nMessage: ${message}`;
+            const encoded = encodeURIComponent(text);
+
+            window.open(`https://wa.me/233207481660?text=${encoded}`, '_blank');
+            window.location.href = `sms:+233207481660?body=${encoded}`;
+        });
+    </script>
 </body>
 </html>

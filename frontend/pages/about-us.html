@@ -221,5 +221,22 @@
     </footer>
 
     <script src="../js/nav.js"></script>
+    <script>
+        document.querySelector('.quote-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name    = document.getElementById('username').value;
+            const code    = document.getElementById('country_code').value;
+            const phone   = document.getElementById('phone_number').value;
+            const message = document.getElementById('tell_us').value;
+            const services = [...document.querySelectorAll('.checkbox-list input:checked')]
+                              .map(cb => cb.nextElementSibling.textContent).join(', ');
+
+            const text = `Quote request – Emmanuel Security Systems\n\nName: ${name}\nPhone: ${code} ${phone}\nServices: ${services || 'Not specified'}\nDetails: ${message}`;
+            const encoded = encodeURIComponent(text);
+
+            window.open(`https://wa.me/233207481660?text=${encoded}`, '_blank');
+            window.location.href = `sms:+233207481660?body=${encoded}`;
+        });
+    </script>
 </body>
 </html>
